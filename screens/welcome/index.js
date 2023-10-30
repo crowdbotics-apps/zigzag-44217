@@ -1,9 +1,17 @@
+import { rest_auth_password_reset_create } from "../../store/zigzagAPI/restAuthDetails.slice.js";
+import { useDispatch } from "react-redux";
 import { Pressable } from "react-native";
 import { ImageBackground } from "react-native";
 import React from "react";
 import { View, Image, Text, ScrollView, SafeAreaView, StyleSheet } from "react-native";
 
 const WelcomeScreen = () => {
+  const dispatch = useDispatch();
+
+  const onSubmit = () => {
+    dispatch(rest_auth_password_reset_create({}));
+  };
+
   return <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
         <View style={styles.group} />
@@ -15,7 +23,7 @@ const WelcomeScreen = () => {
         </View>
         <Text style={styles.footer}>Made with ❤️ by Crowdbotics</Text>
       </ScrollView>
-    <View style={styles.bdRwBgBq}><Pressable><ImageBackground style={styles.nHhUyXwv} source={require("./zetong-li-NAP14GEjvh8-unsplash 2.jpg")} resizeMode="cover"></ImageBackground></Pressable></View></SafeAreaView>;
+    <View style={styles.bdRwBgBq}><Pressable onPress={onSubmit}><ImageBackground style={styles.nHhUyXwv} source={require("./zetong-li-NAP14GEjvh8-unsplash 2.jpg")} resizeMode="cover"></ImageBackground></Pressable></View></SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
