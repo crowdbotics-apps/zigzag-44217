@@ -1,16 +1,10 @@
-import React from "react"
-import {
-  View,
-  Image,
-  Text,
-  ScrollView,
-  SafeAreaView,
-  StyleSheet
-} from "react-native"
+import { Pressable } from "react-native";
+import { ImageBackground } from "react-native";
+import React from "react";
+import { View, Image, Text, ScrollView, SafeAreaView, StyleSheet } from "react-native";
 
 const WelcomeScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
+  return <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
         <View style={styles.group} />
         <View style={styles.group}>
@@ -21,9 +15,8 @@ const WelcomeScreen = () => {
         </View>
         <Text style={styles.footer}>Made with ❤️ by Crowdbotics</Text>
       </ScrollView>
-    </SafeAreaView>
-  )
-}
+    <View style={styles.bdRwBgBq}><Pressable><ImageBackground style={styles.nHhUyXwv} source={require("./zetong-li-NAP14GEjvh8-unsplash 2.jpg")} resizeMode="cover"></ImageBackground></Pressable></View></SafeAreaView>;
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -58,7 +51,17 @@ const styles = StyleSheet.create({
     color: "#828AB0",
     fontWeight: 700,
     marginBottom: 20
+  },
+  bdRwBgBq: {
+    height: 60,
+    width: 140,
+    backgroundColor: "#E4E4E4",
+    borderRadius: 0,
+    color: "#777777"
+  },
+  nHhUyXwv: {
+    width: 142,
+    height: 62
   }
-})
-
-export default WelcomeScreen
+});
+export default WelcomeScreen;
